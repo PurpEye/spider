@@ -19,10 +19,10 @@ class MySpider(Spider):
                 item = PacketstormsItem()
                 item['link'] = response.url
                 item['title'] = sel.xpath('//dt/a/strong/text()').extract()
-                item['author'] = sel.xpath('//dd[contains(class,"refer")/a/text()').extract()
-                item['date'] = sel.xpath('//dd[contains(class,"datetime")/a/text()').extract()
-                item['detail'] = sel.xpath('//dd[contains(class,"detail")/p/text()').extract()
-                item['tags'] = sel.xpath('//dd[contains(class,"tags")/a/text()').extract()
+                item['author'] = sel.xpath('//dd[contains(class,"refer")/a/text()']).extract()
+                item['date'] = sel.xpath('//dd[contains(class,"datetime")/a/text()']).extract()
+                item['detail'] = sel.xpath('//dd[contains(class,"detail")/p/text()']).extract()
+                item['tags'] = sel.xpath('//dd[contains(class,"tags")/a/text()']).extract()
                 print "[*]record:"+response.url
                 yield item
 
